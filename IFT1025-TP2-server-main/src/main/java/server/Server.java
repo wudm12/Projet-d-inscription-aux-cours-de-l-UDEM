@@ -10,6 +10,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static java.lang.Thread.sleep;
+
 /**
  * la classe 'Server' est la classe qui permet d'initiliser un serveur;
  * d'accepter les connexions des clients;
@@ -69,9 +71,21 @@ public class Server {
                 System.out.println("Connecté au client: " + client);
                 objectInputStream = new ObjectInputStream(client.getInputStream());
                 objectOutputStream = new ObjectOutputStream(client.getOutputStream());
-                listen();
-                disconnect();
-                System.out.println("Client déconnecté!");
+
+                //MultiThreading
+                Server server1 = Server.this;
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            server1.listen();
+                            server1.disconnect();
+                            System.out.println("Client déconnecté!");
+                        } catch (IOException | ClassNotFoundException ignored) {
+                        }
+                    }
+                }).start();
+
             } catch (Exception e) {
                 e.printStackTrace();
             }
