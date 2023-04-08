@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client_fx.HelloController">
+   <children>
+      <Pane layoutX="14.0" layoutY="14.0" prefHeight="324.0" prefWidth="270.0">
+         <children>
+            <TableView fx:id="ListeDesCours" layoutX="15.0" layoutY="56.0" prefHeight="254.0" prefWidth="240.0">
+              <columns>
+                <TableColumn fx:id="Code" prefWidth="101.0" text="Code" />
+                <TableColumn fx:id="NomCours" prefWidth="138.0" text="Cours" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="15.0" layoutY="14.0" prefHeight="32.0" prefWidth="240.0" text="Liste des cours">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="341.0" prefHeight="45.0" prefWidth="270.0">
+         <children>
+            <Button layoutX="167.0" layoutY="10.0" mnemonicParsing="false" onAction="#Charger" prefHeight="25.0" prefWidth="89.0" text="Charger" />
+            <ComboBox fx:id="Session" layoutX="22.0" layoutY="10.0" prefHeight="25.0" prefWidth="122.0" promptText="Session" />
+         </children>
+      </Pane>
+      <Pane layoutX="305.0" layoutY="12.0" prefHeight="376.0" prefWidth="281.0">
+         <children>
+            <Label alignment="CENTER" layoutX="6.0" layoutY="14.0" prefHeight="32.0" prefWidth="270.0" text="Inscription au cours">
+               <font>
+                  <Font size="20.0" />
+               </font></Label>
+            <Label layoutX="14.0" layoutY="81.0" prefHeight="32.0" prefWidth="80.0" text="Prenom" />
+            <Label layoutX="14.0" layoutY="113.0" prefHeight="32.0" prefWidth="80.0" text="Nom" />
+            <Label layoutX="14.0" layoutY="145.0" prefHeight="32.0" prefWidth="80.0" text="Email" />
+            <Label layoutX="14.0" layoutY="176.0" prefHeight="32.0" prefWidth="80.0" text="Matricule" />
+            <TextField fx:id="Prenom" layoutX="94.0" layoutY="85.0" prefHeight="25.0" prefWidth="165.0" />
+            <TextField fx:id="Nom" layoutX="94.0" layoutY="117.0" prefHeight="25.0" prefWidth="165.0" />
+            <TextField fx:id="Email" layoutX="94.0" layoutY="149.0" prefHeight="25.0" prefWidth="165.0" />
+            <TextField fx:id="Matricule" layoutX="94.0" layoutY="180.0" prefHeight="25.0" prefWidth="165.0" />
+            <Button layoutX="132.0" layoutY="232.0" mnemonicParsing="false" onAction="#Envoyer" prefHeight="25.0" prefWidth="89.0" text="Envoyer" />
+         </children></Pane>
+   </children>
+</Pane>
